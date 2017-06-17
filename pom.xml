@@ -8,10 +8,6 @@
     <artifactId>schoolback</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <kotlin.version>1.1.2-5</kotlin.version>
-    </properties>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -58,67 +54,34 @@
             <version>1.5.4.RELEASE</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
+        <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
         <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
-            <version>${kotlin.version}</version>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7-1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
         <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.webjars/angularjs -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angularjs</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+            <version>1.5.4.RELEASE</version>
         </dependency>
 
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>test-compile</id>
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>test-compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>testCompile</id>
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>
