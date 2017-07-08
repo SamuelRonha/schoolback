@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insight! Development.</title>
+    <script src="js/app.js"></script>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+    <style type="text/css">
+        .navbar-default {
+            background-color: transparent;
+            border: transparent;
+        }
+
+        .navbar-logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #fc4c49;
+            letter-spacing: 2px;
+
+        }
+
+        .navbar-logo:hover {
+            text-decoration: none !important;
+        }
+
+        .navbar-header {
+            margin-top: 10px;
+        }
+
+        .nav li a {
+            color: #fc4c49 !important;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav a:hover {
+            color: #fff !important;
+            background-color: #fc4c49 !important;
+        }
+
+        .main-header {
+            background-image: url('/img/logo.png');
+            -webkit-background-size: cover;
+            -mob-background-size: cover;
+            padding: 260px 25px;
+        }
+
+        .main-head-h1 {
+            letter-spacing: 3px;
+            color: #fff !important;
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .portifolio-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 25px 9px;
+            transition: 1s;
+        }
+
+        .contact-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 25px 9px;
+            margin-left: 10px;
+            transition: 1s;
+        }
+
+        .portifolio-btn:hover {
+            color: #000000;
+            border: 1px solid #000000;
+            padding: 8px 25px 9px;
+            /*transform: scale(1.1);*/
+            /*transition: 1s;*/
+            text-decoration: none;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+        }
+
+        .contact-btn:hover {
+            color: #000000;
+            border: 1px solid #000000;
+            padding: 8px 25px 9px;
+            margin-left: 10px;
+            /*transform: scale(1.1);*/
+            /*transition: 1s;*/
+            text-decoration: none;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+        }
+
+        .p-desc {
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        #group-id {
+            color: #0f0f0f;
+            text-shadow: 1px 1px 1px #ccc;
+            mob-font-size: 50px;
+            font-size: 200px;
+            padding-top: 50px !important;
+            padding-bottom: 20px;
+        }
+
+        /*.about-heading {*/
+        /*float: left;*/
+        /*font-size: 35px;*/
+        /*padding: 50px 50px;*/
+
+        /*}*/
+
+    </style>
+</head>
+<body id="bodyHome" data-content=".navbar">
+<nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-logo" href="bootstrap-web.html">logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarHome">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/cliente" data-target="#login-modal" data-toggle="modal">Alunos</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#portifoliio">Portifólio</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="main-header text-center">
+    <h1 class="main-head-h1">INSIGHT! DEVELOPMENT</h1>
+    <p class="p-desc">Desenvolvimento de paginas web, incluindo sistemas para controle de gestão empresarial</p>
+    <a href="#portifolio" style="text-decoration:none;">
+        <button class="portifolio-btn">Portifólio</button>
+    </a><a href="#contato">
+    <button class="contact-btn" href="#contact">Contato</button>
+</a>
+</div>
+
+<div ng-view="ng-view">
+    <div id="aboult" class="container-about">
+        <div class="container">
+            <h1 class="about-heading">Sobre Insight!</h1>
+            <div class="col-sm-4">
+                <i id="group-id" class="fa fa-group fa-6x"></i>
+            </div>
+            <div class="col-sm-8">
+                <p><i style="color: #f4511e; font-size: 16px;" class="fa fa-check-circle"></i><b> Quem somos?</b></p>
+                <p>This text is styled with some of the text formatting properties. The heading uses the text-align,
+                    text-transform, and color properties. The paragraph is indented, aligned, and the space between
+                    characters is specified. The underline is removed from this colored "Try it Yourself" link.</p>
+            </div>
+            <div class="col-sm-8">
+                <p><i style="color: #f4511e; font-size: 16px;" class="fa fa-check-circle"></i><b> Nossos Objetivos.</b>
+                </p>
+                <p>This text is styled with some of the text formatting properties. The heading uses the text-align,
+                    text-transform, and color properties. The paragraph is indented, aligned, and the space between
+                    characters is specified. The underline is removed from this colored "Try it Yourself" link.</p>
+            </div>
+            <div class="col-sm-8">
+                <p><i style="color: #f4511e; font-size: 16px;" class="fa fa-check-circle"></i><b> Nossos Ideais.</b></p>
+                <p>This text is styled with some of the text formatting properties. The heading uses the text-align,
+                    text-transform, and color properties. The paragraph is indented, aligned, and the space between
+                    characters is specified. The underline is removed from this colored "Try it Yourself" link.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".navbar a").on('click', function (event) {
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function () {
+            window.location.hash = hash;
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -16,13 +16,9 @@
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-
-
-
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 <!--fixed nav-bar-->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -40,8 +36,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+
+                <!--TODO: needs to open login screen to authenticate obs:. probably a modal can do this-->
+                <li><a href="/schoolback/static/view/panel/panel.html">Login</a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -89,25 +88,40 @@
 <div id="body" class="container text-center">
     <div class="col-sm-3 col-md-3 col-lg-3">
         <i class="fa fa-camera-retro fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue luctus, imperdiet ultrices eros varius</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
+            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
+            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
+            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+            luctus, imperdiet ultrices eros varius</p>
     </div>
 
     <div class="col-sm-3 col-md-3 col-lg-3">
         <i class="fa fa-address-card-o fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue luctus, imperdiet ultrices eros varius</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
+            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
+            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
+            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+            luctus, imperdiet ultrices eros varius</p>
     </div>
 
     <div class="col-sm-3 col-md-3 col-lg-3">
         <i class="fa fa-address-book fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue luctus, imperdiet ultrices eros varius</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
+            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
+            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
+            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+            luctus, imperdiet ultrices eros varius</p>
     </div>
 
     <div class="col-sm-3 col-md-3 col-lg-3">
         <i class="fa fa-amazon fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue luctus, imperdiet ultrices eros varius</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
+            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
+            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
+            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+            luctus, imperdiet ultrices eros varius</p>
     </div>
 </div>
-
 
 
 <ul class="breadcrumb">
@@ -131,12 +145,12 @@
             margin: 10,
             responsiveClass: true,
 
-            center:true,
+            center: true,
             autoplay: true,
             autoplayTimeout: 3000,
             autoplayHoverPause: true,
-            items:1,
-            responsiveRefreshRate:100,
+            items: 1,
+            responsiveRefreshRate: 100,
             navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
 //            responsive: {
 //                0: {
@@ -157,12 +171,13 @@
 
 <style>
 
-    #body{
+    #body {
         width: 100%;
         align-items: center;
         align-content: center;
         padding-top: 100px;
     }
+
     .owl-theme {
         position: relative;
     }
@@ -184,10 +199,11 @@
     .owl-next {
         right: 10px;
     }
-    img{
+
+    img {
         filter: contrast(150%);
     }
 </style>
 
-</body>
+</>
 </html>

@@ -4,10 +4,14 @@
 var app = angular.module("app", ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.when("/country", {
-        templateUrl: "view/country.html",
-        controller: "countryController"
+    $routeProvider
+        .when("/country", {
+            templateUrl: "/schoolback/static/view/country.html",
+            controller: "countryController"
+        }).when("/admin", {
+        templateUrl: "/schoolback/static/view/panel/panel.html"
     });
+    ;
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false

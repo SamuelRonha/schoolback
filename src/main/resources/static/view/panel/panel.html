@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" ng-app="app">
+<head>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../css/font-awesome.min.css"/>
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/angular-route.min.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/controller/country-controller.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<nav id="nav-panel" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li role="presentation" class="li-top text-center">
+            <a href="#"><img src="../../img/logo.png" style="width: 60px;"></a>
+        </li>
+        <li class="li-mid text-center">
+            <div>
+                <div class="circle">
+                </div>
+                <div>
+                    <h3>Megalo Shark</h3>
+                </div>
+            </div>
+        </li>
+        <li role="presentation" class="active"><a href="/home"><i class="fa fa-home fa-lg"></i>  Home</a></li>
+        <li data-toggle="collapse" data-target="#register-itens" class="collapsed">
+            <a href="#"><i class="fa fa-address-book-o fa-lg"></i>  Register
+                <span class="arrow"></span></a>
+        </li>
+
+        <!--TODO: needs to be controlled 4 access lvl-->
+        <ul class="sub-menu collapse" id="register-itens">
+            <li><a href="/country">Country</a></li>
+            <li><a href="#">State</a></li>
+            <li><a href="#">City</a></li>
+            <li><a href="#">Teacher</a></li>
+            <li><a href="#">Student</a></li>
+            <li><a href="#">User</a></li>
+            <li><a href="#">Client</a></li>
+            <li><a href="#">Employee</a></li>
+            <li><a href="#">Joh</a></li>
+
+            <!--TODO: Grade need to be on launch time-->
+            <li><a href="#">Grade</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">ClassRoom</a></li>
+            <li><a href="#">(Home)Work</a></li>
+
+            <!--TODO: Needs to be on a different list-->
+            <li><a href="#">Task</a></li>
+
+            <!--TODO: Needs to be on a different list-->
+            <li><a href="#">Tests</a></li>
+
+            <li><a href="#">Quiz</a></li>
+        </ul>
+
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+        <li role="presentation"><a href="#">Menu Item</a></li>
+    </ul>
+</nav>
+<div>
+    <nav class="navbar-inverse">
+        <div class="nav-pills">
+            <ul>
+                <li>SchoolBack</li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div ng-view="ng-view">
+
+</div>
+<style>
+
+    .arrow:before {
+        font-family: FontAwesome;
+        content: "\f078";
+        display: inline-block;
+        padding-left: 5%;
+        padding-right: 5%;
+        vertical-align: middle;
+        float: right;
+    }
+
+    .li-top {
+        position: inherit;
+        display: inline;
+    }
+
+    #nav-panel {
+        width: 20%;
+        float: left;
+        height: 100%;
+    }
+
+    .li-mid h3 {
+        padding-top: 2%;
+        color: antiquewhite;
+        word-break: break-all;
+        font-size: 1.7vw;
+    }
+
+    .circle {
+        padding: 25% 25% 25% 25%;
+        margin-left: 25%;
+        /*display: inherit;*/
+        background-image: url("../../img/Megalo_Portrait.png");
+        background-size: 100%;
+        width: 20%;
+        /*min-height: 100%;*/
+        border: solid;
+        border-color: -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;
+        border-radius: 50%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    ul ul li a {
+        display: block;
+        padding: 3% 5%;
+        background-color: rgba(43, 51, 50, 0.77);
+        text-decoration: none !important;
+    }
+
+    /* Change the link color on hover */
+    li a:hover {
+        background-color: #555 !important;
+        color: white;
+    }
+</style>
+
+<script>
+    if (typeof angular == 'undefined')
+        window.location.replace("/index.html");
+</script>
+
+</body>
+</html>
