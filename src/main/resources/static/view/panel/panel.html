@@ -1,79 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" ng-app="app">
+<html lang="en" ng-app="app">
 <head>
+    <base href="../view/panel/panel.html"/>
     <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../../css/font-awesome.min.css"/>
     <script src="../../js/jquery-3.1.1.min.js"></script>
     <script src="../../js/jquery-migrate-1.4.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
+
     <script src="../../js/angular.min.js"></script>
-    <script src="../../js/angular-route.min.js"></script>
+    <script src="../../js/angular-ui-router.min.js"></script>
     <script src="../../js/app.js"></script>
-    <script src="../../js/controller/country-controller.js"></script>
+    <script src="../../js/controller/pais-controller.js"></script>
+
 
     <meta charset="UTF-8">
     <title>Title</title>
 
 </head>
 <body>
-<nav id="nav-panel" class="navbar navbar-inverse">
-    <ul class="nav">
-        <li role="presentation" class="li-top text-center">
-            <a href="#"><img src="../../img/logo.png" style="width: 60px;"></a>
-        </li>
-        <li class="li-mid text-center">
-            <div>
-                <div class="circle">
-                </div>
+<div ui-view="content">
+    <nav id="nav-panel" class="navbar navbar-inverse">
+        <ul class="nav">
+            <li role="presentation" class="li-top text-center">
+                <a ui-sref="app"><img src="../../img/logo.png" style="width: 60px;"></a>
+            </li>
+            <li class="li-mid text-center">
                 <div>
-                    <h3>Megalo Shark</h3>
+                    <div class="circle">
+                    </div>
+                    <div>
+                        <h3>Megalo Shark</h3>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li role="presentation" class="active"><a href="/home"><i class="fa fa-home fa-lg"></i>  Home</a></li>
-        <li data-toggle="collapse" data-target="#register-itens" class="collapsed">
-            <a href="#"><i class="fa fa-address-book-o fa-lg"></i>  Register
-                <span class="arrow"></span></a>
-        </li>
+            </li>
+            <li role="presentation" class="active"><a href="/home"><i class="fa fa-home fa-lg"></i> Home</a></li>
+            <li data-toggle="collapse" data-target="#register-itens" class="collapsed">
+                <a id="pow" href="#">
+                    <i class="fa fa-enderecos-book-o fa-lg"></i> Register
+                    <span class="arrow"></span>
+                </a>
+            </li>
 
-        <!--TODO: needs to be controlled 4 access lvl-->
-        <ul class="sub-menu collapse" id="register-itens">
-            <li><a href="/country">Country</a></li>
-            <li><a href="#">State</a></li>
-            <li><a href="#">City</a></li>
-            <li><a href="#">Teacher</a></li>
-            <li><a href="#">Student</a></li>
-            <li><a href="#">User</a></li>
-            <li><a href="#">Client</a></li>
-            <li><a href="#">Employee</a></li>
-            <li><a href="#">Joh</a></li>
+            <!--TODO: needs to be controlled 4 access lvl-->
+            <ul class="sub-menu collapse" id="register-itens">
+                <li><a ui-sref="app.admin.pais">Country</a></li>
+                <li><a href="#">State</a></li>
+                <li><a href="#">City</a></li>
+                <li><a href="#">Teacher</a></li>
+                <li><a href="#">Student</a></li>
+                <li><a href="#">User</a></li>
+                <li><a href="#">Client</a></li>
+                <li><a href="#">Employee</a></li>
+                <li><a href="#">Joh</a></li>
 
-            <!--TODO: Grade need to be on launch time-->
-            <li><a href="#">Grade</a></li>
-            <li><a href="#">Classes</a></li>
-            <li><a href="#">ClassRoom</a></li>
-            <li><a href="#">(Home)Work</a></li>
+                <!--TODO: Grade need to be on launch time-->
+                <li><a href="#">Grade</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">ClassRoom</a></li>
+                <li><a href="#">(Home)Work</a></li>
 
-            <!--TODO: Needs to be on a different list-->
-            <li><a href="#">Task</a></li>
+                <!--TODO: Needs to be on a different list-->
+                <li><a href="#">Task</a></li>
 
-            <!--TODO: Needs to be on a different list-->
-            <li><a href="#">Tests</a></li>
+                <!--TODO:    Needs to be on a different list-->
+                <li><a href="#">Tests</a></li>
 
-            <li><a href="#">Quiz</a></li>
+                <li><a href="#">Quiz</a></li>
+            </ul>
+
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
+            <li role="presentation"><a href="#">Menu Item</a></li>
         </ul>
-
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-        <li role="presentation"><a href="#">Menu Item</a></li>
-    </ul>
-</nav>
+    </nav>
+    <!--<ui-view></ui-view>-->
+</div>
 <div>
     <nav class="navbar-inverse">
         <div class="nav-pills">
@@ -83,10 +91,42 @@
         </div>
     </nav>
 </div>
-<div ng-view="ng-view">
 
-</div>
+<!--<div ui-view="admin"></div>-->
+
+
 <style>
+
+    #nav-panel {
+        width: 20%;
+        float: left;
+        /*width: 0; !* 0 width - change this with JavaScript *!*/
+        /*height: 200% !important;*/
+        position: absolute; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        background-color: #222; /* Black*/
+        border-color: #0f0f0f;
+        transition: 0.5s;
+    }
+
+    .navbar-inverse {
+        margin-bottom: 0%;
+        border-radius: 0;
+    }
+
+    .nav {
+        z-index: 1000;
+        height: 100%;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .navbar-inverse {
+        background-color: transparent;
+    }
 
     .arrow:before {
         font-family: FontAwesome;
@@ -101,12 +141,6 @@
     .li-top {
         position: inherit;
         display: inline;
-    }
-
-    #nav-panel {
-        width: 20%;
-        float: left;
-        height: 100%;
     }
 
     .li-mid h3 {
@@ -148,6 +182,8 @@
         background-color: #555 !important;
         color: white;
     }
+
+
 </style>
 
 <script>

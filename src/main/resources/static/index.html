@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
+    <base href="/">
 
     <link rel="stylesheet" href="css/owl.theme.default.min.css"/>
     <link rel="stylesheet" href="css/owl.carousel.min.css"/>
@@ -9,162 +10,150 @@
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
 
     <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
+    <!--<script src="js/angular-route.min.js"></script>-->
     <script src="js/app.js"></script>
-    <script src="js/controller/country-controller.js"></script>
+    <script src="js/controller/pais-controller.js"></script>
+    <script src="js/controller/owl-controller.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
 
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<!--fixed nav-bar-->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="img/logo.png" style="width: 60px;"></a>
+<body>
+<div ui-view="content" >
+    <!--fixed nav-bar-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png" style="width: 60px;"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+
+                    <!--TODO: needs to open login screen to authenticate obs:. probably a modal can do this-->
+                    <li><a ui-sref="app.admin" ui-sref-active="active">link.app.admin</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        <div class="owl-carousel owl-theme" ng-controller="owlController">
+            <div class="item"><img src="img/01.jpg"/></div>
+            <div class="item"><img src="img/02.jpg"/></div>
+            <div class="item"><img src="img/04.jpg"/></div>
+            <div class="item"><img src="img/05.jpg"/></div>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+    </nav>
 
-                <!--TODO: needs to open login screen to authenticate obs:. probably a modal can do this-->
-                <li><a href="/schoolback/static/view/panel/panel.html">Login</a></li>
+    <div id="body" class="container text-center">
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <i class="fa fa-camera-retro fa-5x"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida.
+                Phasellus
+                et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Cras id
+                condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit
+                volutpat
+                ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+                luctus, imperdiet ultrices eros varius</p>
+        </div>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    <div class="owl-carousel owl-theme">
-        <div class="item"><img src="img/01.jpg"/></div>
-        <div class="item"><img src="img/02.jpg"/></div>
-        <div class="item"><img src="img/04.jpg"/></div>
-        <div class="item"><img src="img/05.jpg"/></div>
-    </div>
-</nav>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <i class="fa fa-enderecos-card-o fa-5x"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida.
+                Phasellus
+                et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Cras id
+                condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit
+                volutpat
+                ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+                luctus, imperdiet ultrices eros varius</p>
+        </div>
 
-<div id="body" class="container text-center">
-    <div class="col-sm-3 col-md-3 col-lg-3">
-        <i class="fa fa-camera-retro fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
-            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
-            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
-            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
-            luctus, imperdiet ultrices eros varius</p>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <i class="fa fa-enderecos-book fa-5x"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida.
+                Phasellus
+                et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Cras id
+                condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit
+                volutpat
+                ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+                luctus, imperdiet ultrices eros varius</p>
+        </div>
+
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <i class="fa fa-amazon fa-5x"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida.
+                Phasellus
+                et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Cras id
+                condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit
+                volutpat
+                ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
+                luctus, imperdiet ultrices eros varius</p>
+        </div>
     </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3">
-        <i class="fa fa-address-card-o fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
-            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
-            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
-            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
-            luctus, imperdiet ultrices eros varius</p>
-    </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3">
-        <i class="fa fa-address-book fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
-            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
-            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
-            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
-            luctus, imperdiet ultrices eros varius</p>
-    </div>
+    <ul class="breadcrumb">
+        <li><a href="index.html">Begin</a></li>
+        <li><a href="pais">Country</a></li>
+    </ul>
 
-    <div class="col-sm-3 col-md-3 col-lg-3">
-        <i class="fa fa-amazon fa-5x"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim blandit dui vitae gravida. Phasellus
-            et cursus ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id
-            condimentum lectus. Sed quis posuere velit. Curabitur scelerisque ipsum tellus, sed pretium elit volutpat
-            ac. Vivamus sed ipsum rhoncus, pellentesque ipsum ultrices, cursus eros. Nam porttitor nisl vel augue
-            luctus, imperdiet ultrices eros varius</p>
-    </div>
+
+    <!--<div ui-view="admin"></div>-->
+    <!--<ui-view></ui-view>-->
 </div>
-
-
-<ul class="breadcrumb">
-    <li><a href="index.html">Begin</a></li>
-    <li><a href="country">Country</a></li>
-</ul>
-
-<div ng-view="ng-view">
-</div>
-
+</body>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
-
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-//        autoWidth: true,
-            dots: true,
-            nav: true,
-            margin: 10,
-            responsiveClass: true,
-
-            center: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            items: 1,
-            responsiveRefreshRate: 100,
-            navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-//            responsive: {
-//                0: {
-//                    items: 1
-//                },
-//                600: {
-//                    items: 1
-//                },
-//                1000: {
-//                    items: 1
-//                }
-//            }
-        })
-    });
 
 
 </script>

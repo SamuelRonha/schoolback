@@ -22,9 +22,15 @@ app.controller("countryController", function ($scope, $http) {
             url: 'http://localhost:8080/country',
             data: $scope.country
         }).then(function (response) {
+            console.log('pop2');
             $scope.country = response.data;
+            if(response.status == 201){
+                console.log(response);
+            }
         }, function (response) {
-
+            if (response.status == 201) {
+                console.log(response);
+            }
         });
     };
 });
