@@ -6,36 +6,40 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Entity
 @DynamicUpdate
 public class Nota extends Base {
 
-    private String tipo;
 
     @ManyToOne
     @NotNull
-    private Materia materia;
+    private Aula aula;
 
-    @ManyToOne
-    private Tarefa tarefa;
+//    @ManyToOne
+//    private Tarefa tarefa;
 
-    @ManyToOne
-    private Trabalho trabalho;
+//    @ManyToOne
+//    private Trabalho trabalho;
 
-    @ManyToOne
-    private AnoLetivo anoLetivo;
 
     @ManyToOne
     private Separador separador;
 
-    public Trabalho getTrabalho() {
-        return trabalho;
-    }
+    @NotNull
+    private BigDecimal valor;
 
-    public void setTrabalho(Trabalho trabalho) {
-        this.trabalho = trabalho;
-    }
+    @NotNull
+    private String tipo;
+
+//    public Trabalho getTrabalho() {
+//        return trabalho;
+//    }
+//
+//    public void setTrabalho(Trabalho trabalho) {
+//        this.trabalho = trabalho;
+//    }
 
     public String getTipo() {
         return tipo;
@@ -45,20 +49,12 @@ public class Nota extends Base {
         this.tipo = tipo;
     }
 
-    public Materia getMateria() {
-        return materia;
+    public Aula getAula() {
+        return aula;
     }
 
-    public void setMateria(Materia materia) {
-        this.materia = materia;
-    }
-
-    public AnoLetivo getAnoLetivo() {
-        return anoLetivo;
-    }
-
-    public void setAnoLetivo(AnoLetivo anoLetivo) {
-        this.anoLetivo = anoLetivo;
+    public void setAula(Aula aula) {
+        this.aula = aula;
     }
 
     public Separador getSeparador() {
@@ -69,11 +65,19 @@ public class Nota extends Base {
         this.separador = separador;
     }
 
-    public Tarefa getTarefa() {
-        return tarefa;
+//    public Tarefa getTarefa() {
+//        return tarefa;
+//    }
+//
+//    public void setTarefa(Tarefa tarefa) {
+//        this.tarefa = tarefa;
+//    }
+
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setTarefa(Tarefa tarefa) {
-        this.tarefa = tarefa;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 }

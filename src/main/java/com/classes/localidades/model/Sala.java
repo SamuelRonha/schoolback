@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -26,6 +27,9 @@ public class Sala extends Base {
      */
     @Column
     private int cadeiras;
+
+    @Transient
+    private String nome;
 
     public String getNumero() {
         return numero;
@@ -49,5 +53,9 @@ public class Sala extends Base {
 
     public void setCadeiras(int cadeiras) {
         this.cadeiras = cadeiras;
+    }
+
+    public String getNome() {
+        return numero;
     }
 }

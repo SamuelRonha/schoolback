@@ -2,9 +2,6 @@ package com.classes.pessoas.model;
 
 import com.base.model.Base;
 import com.classes.basicos.model.Formacao;
-import com.classes.estudo.model.HoraAula;
-import com.classes.estudo.model.Turma;
-import com.classes.localidades.model.Sala;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -31,14 +28,9 @@ public class Aluno extends Base {
     @OneToMany
     private List<Parentesco> parentescos;
 
-    @OneToMany
-    private List<HoraAula> horaAulas;
+    @Transient
+    private String nome;
 
-    @OneToOne
-    private Turma turma;
-
-    @OneToOne
-    private Sala sala;
 
     public String getNumero() {
         return numero;
@@ -72,30 +64,13 @@ public class Aluno extends Base {
         this.parentescos = parentescos;
     }
 
-
-    public List<HoraAula> getHoraAulas() {
-        return horaAulas;
+    public String getNome() {
+        return this.getPessoa().getNome();
     }
 
-    public void setHoraAulas(List<HoraAula> horaAulas) {
-        this.horaAulas = horaAulas;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-
-    public Turma getTurma() {
-        return turma;
-    }
-
-    public void setTurma(Turma turma) {
-        this.turma = turma;
-    }
-
-    public Sala getSala() {
-        return sala;
-    }
-
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
-
-
 }
+
+

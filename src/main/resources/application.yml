@@ -12,6 +12,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   session:
     store-type: jdbc
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
 server:
   port:
     ${port:8080}

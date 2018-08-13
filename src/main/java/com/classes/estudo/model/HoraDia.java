@@ -13,6 +13,7 @@ import java.time.DayOfWeek;
 public class HoraDia extends Base {
     @NotNull
     private DayOfWeek diaSemana;
+
     @NotNull
     private Time hora;
 

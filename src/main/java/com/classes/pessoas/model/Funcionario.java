@@ -4,10 +4,7 @@ import com.base.model.Base;
 import com.classes.basicos.model.Funcao;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
@@ -16,14 +13,18 @@ import java.math.BigDecimal;
 @Entity
 @DynamicUpdate
 public class Funcionario extends Base {
+
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Pessoa pessoa;
 
     private BigDecimal salario;
 
-    @NotNull
-    @OneToOne
+    @ManyToOne
     private Funcao funcao;
+
+
+    @Transient
+    private String nome;
 
     public Pessoa getPessoa() {
         return pessoa;
@@ -47,5 +48,9 @@ public class Funcionario extends Base {
 
     public void setFuncao(Funcao funcao) {
         this.funcao = funcao;
+    }
+
+    public String getNome() {
+        return pessoa.getNome();
     }
 }

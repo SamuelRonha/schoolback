@@ -18,7 +18,7 @@ public class Usuario extends Base {
 
     @Column(unique = true)
     @NotNull
-    private String nome;
+    private String username;
 
     @Column
     @NotNull
@@ -31,12 +31,12 @@ public class Usuario extends Base {
     @Column
     private Boolean status;
 
-    public String getNome() {
-        return nome;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getSenha() {

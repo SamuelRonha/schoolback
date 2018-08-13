@@ -1,20 +1,23 @@
 package com.classes.estudo.model;
 
 import com.base.model.Base;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.DynamicUpdate;
 
+import javax.jdo.annotations.Unique;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @DynamicUpdate
 public class AnoLetivo extends Base {
     @Max(9999)
+    @Unique
     private int ano;
 
     @NotNull
@@ -23,9 +26,11 @@ public class AnoLetivo extends Base {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Separador> separadors;
 
-    private LocalDate inicio;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date inicio;
 
-    private LocalDate fim;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date fim;
 
     public int getAno() {
         return ano;
@@ -51,19 +56,19 @@ public class AnoLetivo extends Base {
         this.separadors = separadors;
     }
 
-    public LocalDate getInicio() {
+    public Date getInicio() {
         return inicio;
     }
 
-    public void setInicio(LocalDate inicio) {
+    public void setInicio(Date inicio) {
         this.inicio = inicio;
     }
 
-    public LocalDate getFim() {
+    public Date getFim() {
         return fim;
     }
 
-    public void setFim(LocalDate fim) {
+    public void setFim(Date fim) {
         this.fim = fim;
     }
 }

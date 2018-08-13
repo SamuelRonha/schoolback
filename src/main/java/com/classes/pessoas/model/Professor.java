@@ -16,11 +16,16 @@ import java.util.List;
 public class Professor extends Base {
 
     @NotNull
-    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Funcionario funcionario;
 
-    @OneToMany
+    @ManyToMany
     private List<Materia> materias;
+
+    @Transient
+    private String nome;
+
+
 
     public Funcionario getFuncionario() {
         return funcionario;
@@ -36,5 +41,9 @@ public class Professor extends Base {
 
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
+    }
+
+    public String getNome() {
+        return funcionario.getPessoa().getNome();
     }
 }

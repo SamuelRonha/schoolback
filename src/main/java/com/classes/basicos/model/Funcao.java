@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.sql.Time;
 
 @Entity
@@ -14,7 +15,8 @@ public class Funcao extends Base {
     private String nome;
     private String descricao;
     private String valor;
-    private Time tempo;
+    @Pattern(regexp = "DIA|HORA|MENSAL|ANUAL")
+    private String tempo;
 
     public String getNome() {
         return nome;
@@ -40,11 +42,11 @@ public class Funcao extends Base {
         this.valor = valor;
     }
 
-    public Time getTempo() {
+    public String getTempo() {
         return tempo;
     }
 
-    public void setTempo(Time tempo) {
+    public void setTempo(String tempo) {
         this.tempo = tempo;
     }
 }

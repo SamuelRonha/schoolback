@@ -3,8 +3,10 @@ package com.base.model;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.*;
-import java.time.Instant;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
@@ -15,9 +17,6 @@ public class Base implements Model {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Version
-    private Integer version;
 
     @Column(updatable = false)
     @CreatedDate
@@ -35,15 +34,6 @@ public class Base implements Model {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
 
     public Date getCreated() {
         return created;

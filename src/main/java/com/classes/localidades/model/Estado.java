@@ -3,9 +3,11 @@ package com.classes.localidades.model;
 
 import com.base.model.Base;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -17,11 +19,17 @@ import javax.validation.constraints.NotNull;
 public class Estado extends Base {
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Pais pais;
 
     @Column
     @NotNull
     private String nome;
+
+    @Column
+    @NotNull
+    @Length(min = 2, max = 2)
+    private String sigla;
 
     @Column
     @NotNull
@@ -43,6 +51,14 @@ public class Estado extends Base {
         this.nome = nome;
     }
 
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -50,4 +66,6 @@ public class Estado extends Base {
     public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
+
+
 }

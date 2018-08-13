@@ -4,10 +4,7 @@ package com.classes.localidades.model;
 import com.base.model.Base;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -25,7 +22,8 @@ public class Cidade extends Base {
     @NotNull
     private Integer codigo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private Estado estado;
 
     public String getNome() {

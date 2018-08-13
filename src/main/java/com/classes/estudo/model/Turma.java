@@ -5,10 +5,7 @@ import com.classes.localidades.model.Sala;
 import com.classes.pessoas.model.Aluno;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -24,7 +21,11 @@ public class Turma extends Base {
     @OneToOne
     private Sala sala;
 
-    @OneToMany
+//    @ManyToOne
+//    private AnoLetivo anoLetivo;
+
+    @NotNull
+    @OneToMany(cascade = CascadeType.ALL)
     private List<HoraAula> horaAulas;
 
     public String getNome() {
@@ -50,4 +51,20 @@ public class Turma extends Base {
     public void setHoraAulas(List<HoraAula> horaAulas) {
         this.horaAulas = horaAulas;
     }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+
+//    public AnoLetivo getAnoLetivo() {
+//        return anoLetivo;
+//    }
+//
+//    public void setAnoLetivo(AnoLetivo anoLetivo) {
+//        this.anoLetivo = anoLetivo;
+//    }
 }

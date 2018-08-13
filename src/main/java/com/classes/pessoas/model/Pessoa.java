@@ -1,6 +1,7 @@
 package com.classes.pessoas.model;
 
 import com.base.model.Base;
+import com.classes.basicos.model.Anexo;
 import com.classes.localidades.model.Endereco;
 import com.classes.localidades.model.Telefone;
 import org.hibernate.annotations.DynamicUpdate;
@@ -22,12 +23,12 @@ public class Pessoa extends Base {
     @NotNull
     private String nome;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable
     @NotNull
     private Set<Endereco> enderecos;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<Telefone> telefones;
 
@@ -41,6 +42,9 @@ public class Pessoa extends Base {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @NotNull
     private Usuario usuario;
+
+    @ManyToOne
+    private Anexo foto;
 
     public String getNome() {
         return nome;
@@ -88,5 +92,13 @@ public class Pessoa extends Base {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public Anexo getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Anexo foto) {
+        this.foto = foto;
     }
 }

@@ -1,6 +1,7 @@
 package com.classes.estudo.model;
 
 import com.base.model.Base;
+import com.classes.basicos.model.Anexo;
 import com.classes.pessoas.model.Professor;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -8,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,6 +21,9 @@ public class Trabalho extends Base {
 
     private String descricao;
 
+    @OneToMany
+    private List<Anexo> anexos;
+
     /**
      * Prova
      * TrabalhoRepo
@@ -31,11 +34,6 @@ public class Trabalho extends Base {
     private LocalDate inicio;
     private LocalDate fim;
 
-    /**
-     * Andamento, Aguardando, Finalizado ou Cancelado
-     */
-    @Size(min = 1, max = 4)
-    private int status;
 
     @NotNull
     @ManyToOne
@@ -88,14 +86,6 @@ public class Trabalho extends Base {
         this.fim = fim;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
     public Materia getMateria() {
         return materia;
     }
@@ -110,5 +100,21 @@ public class Trabalho extends Base {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    public List<Anexo> getAnexos() {
+        return anexos;
+    }
+
+    public void setAnexos(List<Anexo> anexos) {
+        this.anexos = anexos;
+    }
+
+    public List<Turma> getTurmas() {
+        return turmas;
+    }
+
+    public void setTurmas(List<Turma> turmas) {
+        this.turmas = turmas;
     }
 }
